@@ -30,16 +30,16 @@ Server
 
 Build tools
 
-- Webpack v4    
-[ts-loader](https://github.com/TypeStrong/ts-loader)    
-[babel-loader](https://github.com/babel/babel-loader)   
-[css-loader](https://github.com/webpack-contrib/css-loader) 
-[postcss-loader](https://github.com/postcss/postcss-loader) 
-[mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)   
-- Babel v6  
-[babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)   
-[babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)    
-[babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)    
+- Webpack v4
+    - [ts-loader](https://github.com/TypeStrong/ts-loader)
+    - [babel-loader](https://github.com/babel/babel-loader)
+    - [css-loader](https://github.com/webpack-contrib/css-loader)
+    - [postcss-loader](https://github.com/postcss/postcss-loader)
+    - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+- Babel v6
+    - [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
+    - [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
+    - [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)
 
 ### Code
 
