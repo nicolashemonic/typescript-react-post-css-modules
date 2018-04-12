@@ -1,0 +1,36 @@
+:root {
+  --red: red;
+  --green: green;
+  --blue: blue;
+  --yellow: yellow;
+}
+
+.table {
+  display: table;
+  font-size: 1rem;
+}
+
+.row {
+  display: table-row;
+}
+
+.cell {
+  display: table-cell;
+  padding: 10px;
+}
+
+.cell:nth-child(1) {
+  background: var(--red);
+}
+
+.cell:nth-child(2) {
+  background: var(--green);
+}
+
+.cell:nth-child(3) {
+  background: var(--blue);
+}
+
+.cell.yellow {
+  background: var(--yellow);
+}
