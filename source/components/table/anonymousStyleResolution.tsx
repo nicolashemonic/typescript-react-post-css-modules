@@ -6,14 +6,12 @@
 import React from "react";
 import "./style.css";
 
-export default () => {
-    return (
-        <div styleName="table">
-            <div styleName="row">
-                <div styleName="cell">A0</div>
-                <div styleName="cell">B0</div>
-                <div styleName="cell">C0</div>
-            </div>
+export default () => (
+    <div styleName="table">
+        <div styleName="row">
+            <div styleName="cell">A0</div>
+            <div styleName="cell">B0</div>
+            <div styleName="cell">C0</div>
         </div>
-    );
-};
+    </div>
+);

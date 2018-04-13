@@ -10,14 +10,12 @@ import table from "./style.css";
 // prevent TypeScript remove unused import
 const tableStyleRef = table;
 
-export default () => {
-    return (
-        <div styleName="table.table">
-            <div styleName="table.row">
-                <div styleName="table.cell">A1</div>
-                <div styleName="table.cell">B1</div>
-                <div styleName="table.cell">C1</div>
-            </div>
+export default () => (
+    <div styleName="table.table">
+        <div styleName="table.row">
+            <div styleName="table.cell">A1</div>
+            <div styleName="table.cell">B1</div>
+            <div styleName="table.cell">C1</div>
         </div>
-    );
-};
+    </div>
+);

@@ -1,6 +1,6 @@
-### TypeScript, React, Css modules and Post Css
+### TypeScript, React, Css modules and PostCss
 
-A React example project to demonstrate how to implement Css Modules and Post Css using TypeScript.
+A React example project to demonstrate how to implement Css Modules and PostCss using TypeScript.
 
 ### Quick Start
 
@@ -51,12 +51,17 @@ Client code is built into ```client``` folder.
 
 The application is built through Webpack.
 
-1. TypeScript type check and emit JavaScript es2015 (TypeScript without types) consumable by Babel.
-2. ```babel-preset-react``` transform React jsx and ```babel-preset-env``` es2015 syntax into code understandable by the browser.
-3. ```babel-plugin-react-css-modules``` transform ```styleName``` attribute into ```className``` React attribute.
-4. Postcss transform new css syntax into css understable today by the browser using ```postcss-cssnext```.
-5. ```css-loader``` import css files and generate scoped class names regarding ```localIdentName``` option.
-6. Finally, imported and transformed css files are extracted from the JS bundle into a bundle Css using ```mini-css-extract-plugin```.
+TypeScript type check and emit JavaScript es2015 (TypeScript without types) consumable by Babel.
+
+```babel-preset-react``` transform React jsx and ```babel-preset-env``` es2015 syntax into code understandable by the browser.
+
+```babel-plugin-react-css-modules``` transform ```styleName``` attribute into ```className``` React attribute.
+
+Postcss transform new css syntax into css understable today by the browser using ```postcss-cssnext```.
+
+```css-loader``` import css files and generate scoped class names regarding ```localIdentName``` option.
+
+Finally, imported and transformed css files are extracted from the JS bundle into a bundle Css using ```mini-css-extract-plugin```.
 
 ### Documentation
 

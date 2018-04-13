@@ -1,12 +1,27 @@
 {
+  // TypeScript type check and emit JavaScript es2015 (TypeScript without types) consumable by Babel.
+
   "compilerOptions": {
+    // Preserve source code es2015 syntax
     "target": "es2015",
     "module": "es2015",
+
+    // Preserve React jsx syntax
     "jsx": "preserve",
-    "strict": true, 
+
+    // Enable all strict type checking
+    "alwaysStrict": true,
     "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "strictNullChecks": true,
+
+    // Allow import X from "x"
     "allowSyntheticDefaultImports": true
   },
+  // Allow compiler to find ts(x) files in source folder
   "include": [
     "./source"
   ]
