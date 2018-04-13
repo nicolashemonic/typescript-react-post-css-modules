@@ -1,7 +1,8 @@
-var UglifyJsPlugin = require("uglifyjs-webpack-plugin");
-var MiniCssExtractPlugin = require("mini-css-extract-plugin");
-var OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-var path = require("path");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const path = require("path");
+const localIdentName = "[path][local]";
 
 module.exports = {
     // The main entry point source/index.tsx
@@ -51,7 +52,7 @@ module.exports = {
                         options: {
                             modules: true,
                             importLoaders: 1,
-                            localIdentName: "[name]__[local]"
+                            localIdentName: localIdentName
                         }
                     },
                     {
@@ -82,7 +83,7 @@ module.exports = {
                                 [
                                     "react-css-modules",
                                     {
-                                        generateScopedName: "[name]__[local]"
+                                        generateScopedName: localIdentName
                                     }
                                 ]
                             ]
