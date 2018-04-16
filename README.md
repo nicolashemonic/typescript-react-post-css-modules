@@ -2,12 +2,12 @@
 
 A React example project to demonstrate how to achieve code splitting plus css modules.
 
-Its main goals are:
+- Implement React code splitting
+- Implement Css modules
+- Use Postcss Cssnext
+- Build all this features
 
-☞ Implement React code splitting    
-☞ Implement React-css-modules   
-☞ Use Postcss-cssnext   
-☞ Build all this features   
+With all this features we able to load associated Scripts and Styles on demand 🖖🚀🙃.
 
 ### Quick Start
 
