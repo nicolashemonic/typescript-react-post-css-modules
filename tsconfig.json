@@ -4,7 +4,7 @@
   "compilerOptions": {
     // Preserve source code es2015 syntax
     "target": "es2015",
-    "module": "es2015",
+    "module": "esnext",
 
     // Preserve React jsx syntax
     "jsx": "preserve",

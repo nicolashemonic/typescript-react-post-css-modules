@@ -6,12 +6,14 @@ const localIdentName = "[path][local]";
 
 module.exports = {
     // The main entry point source/index.tsx
-    entry: path.join(__dirname, "source"),
+    entry: path.resolve(__dirname, "source"),
 
     // Generated bundle location
     output: {
-        path: path.join(__dirname, "client"),
-        filename: "[name].js"
+        path: path.resolve(__dirname, "client"),
+        filename: "[name].js",
+        chunkFilename: "[name].js",
+        publicPath: "/client/"
     },
 
     // Source files take into account
@@ -19,9 +21,42 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", ".jsx", ".css"]
     },
 
-    // Add Css minimizer used on prod build
-    // Add JS minimizer because optimization minimizer is manually defined
     optimization: {
+        // Customize bundles
+        splitChunks: {
+            cacheGroups: {
+                // vendor.js
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: "vendor",
+                    chunks: "all"
+                },
+
+                // common.js
+                common: {
+                    // Bundle name
+                    name: "common",
+                    // Find common module inside dynamic import bundle
+                    chunks: "async",
+                    // Add module if it used at least twice in different dynamic import bundle
+                    minChunks: 2,
+                    // Force Webpack to apply this rules even if the rule is not in optimal regarding webpack default behavior
+                    enforce: true
+                }
+
+                // Add this option to build an unique css bundle
+                // styles.css && styles.js (class names mapping for js runtime)
+                // styles: {
+                //     name: "styles",
+                //     test: /\.css$/,
+                //     chunks: "all",
+                //     enforce: true
+                // }
+            }
+        },
+
+        // Add Css minimizer used on prod build
+        // Add JS minimizer because optimization minimizer is manually defined
         minimizer: [
             new UglifyJsPlugin({
                 cache: true,
@@ -40,9 +75,10 @@ module.exports = {
 
     module: {
         rules: [
-            // Postcss transform new css syntax into css understable today by the browser using postcss-cssnext.
+            // postcss-cssnext transform new css syntax into css understable today by the browser.
+            // postcss-import transform @import rules by inlining content, useful for shared variables.
             // css-loader import css files and generate scoped class names regarding localIdentName option.
-            // Finally, imported and transformed css files are extracted from the JS bundle into a bundle Css using mini-css-extract-plugin.
+            // mini-css-extract-plugin extract transformed css into dedicated css bundles.
             {
                 test: /\.css$/,
                 use: [
@@ -66,6 +102,8 @@ module.exports = {
                 use: [
                     // 2. babel-preset-react transform React jsx and babel-preset-env es2015 syntax into code understandable by the browser.
                     //    babel-plugin-react-css-modules transform styleName attribute into className React attribute.
+                    //    syntax-dynamic-import allow babel to parse dynamic import syntax but not transform it.
+                    //    react-loadable/babel declare wich modules are being loaded.
                     {
                         loader: "babel-loader",
                         options: {
@@ -85,7 +123,9 @@ module.exports = {
                                     {
                                         generateScopedName: localIdentName
                                     }
-                                ]
+                                ],
+                                "syntax-dynamic-import",
+                                "react-loadable/babel"
                             ]
                         }
                     },

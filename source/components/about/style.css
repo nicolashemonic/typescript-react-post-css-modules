@@ -1,0 +1,5 @@
+@import "../../styles/colors.css";
+
+.about {
+  color: var(--DARKCYAN);
+}

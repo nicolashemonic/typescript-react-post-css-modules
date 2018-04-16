@@ -1,6 +1,13 @@
-### TypeScript, React, Css modules and PostCss
+### TypeScript, Code splitting and Css modules
 
-A React example project to demonstrate how to implement Css Modules and PostCss using TypeScript.
+A React example project to demonstrate how to achieve code splitting plus css modules.
+
+Its main goals are:
+
+☞ Implement React code splitting    
+☞ Implement React-css-modules   
+☞ Use Postcss-cssnext   
+☞ Build all this features   
 
 ### Quick Start
 
@@ -23,6 +30,7 @@ Client
 
 - React v16.3
 - React Css Modules v3
+- React Loadable v5
 
 Server
 
@@ -36,10 +44,15 @@ Build tools
     - [css-loader](https://github.com/webpack-contrib/css-loader)
     - [postcss-loader](https://github.com/postcss/postcss-loader)
     - [mini-css-extract-plugin](https://github.com/webpack-contrib/mini-css-extract-plugin)
+- PostCss
+    - [postcss-cssnext](https://github.com/MoOx/postcss-cssnext)
+    - [postcss-import](https://github.com/postcss/postcss-import)
 - Babel v6
     - [babel-plugin-react-css-modules](https://github.com/gajus/babel-plugin-react-css-modules)
     - [babel-preset-env](https://github.com/babel/babel/tree/master/packages/babel-preset-env)
     - [babel-preset-react](https://github.com/babel/babel/tree/master/packages/babel-preset-react)
+    - [babel-plugin-syntax-dynamic-import](https://babeljs.io/docs/plugins/syntax-dynamic-import/)
+    - [react-loadable/babel](https://github.com/jamiebuilds/react-loadable#declaring-which-modules-are-being-loaded)
 
 ### Code
 
@@ -55,17 +68,21 @@ TypeScript type check and emit JavaScript es2015 (TypeScript without types) cons
 
 ```babel-preset-react``` transform React jsx and ```babel-preset-env``` es2015 syntax into code understandable by the browser.
 
-```babel-plugin-react-css-modules``` transform ```styleName``` attribute into ```className``` React attribute.
+```babel-plugin-react-css-modules``` transform ```styleName``` attribute into ```className``` React attribute and resolve dynamic class name at runtime.
 
-Postcss transform new css syntax into css understable today by the browser using ```postcss-cssnext```.
+```postcss-cssnext``` transform new css syntax into css understable today by the browser.
+
+```postcss-import``` transform @import rules by inlining content, useful for shared variables.
 
 ```css-loader``` import css files and generate scoped class names regarding ```localIdentName``` option.
 
-Finally, imported and transformed css files are extracted from the JS bundle into a bundle Css using ```mini-css-extract-plugin```.
+```mini-css-extract-plugin``` extract transformed Css into dedicated Css bundles.
 
 ### Documentation
 
 This sample project was made according to these documentations.
+
+Css Modules
 
 - [Css Modules](https://github.com/css-modules/css-modules)
 - [Css Loader](https://github.com/webpack-contrib/css-loader#css-loader)
@@ -73,3 +90,9 @@ This sample project was made according to these documentations.
 - [React Css Modules](https://github.com/gajus/babel-plugin-react-css-modules#css-modules)
 - [PostCss Loader](https://github.com/postcss/postcss-loader#postcss-loader)
 - [PostCss CssNext](https://github.com/MoOx/postcss-cssnext#postcss-cssnext)
+
+Code Splitting
+
+- [React](https://reactjs.org/docs/code-splitting.html)
+- [React Loadable](https://github.com/jamiebuilds/react-loadable#------------guide)
+- [Webpack](https://webpack.js.org/guides/code-splitting)

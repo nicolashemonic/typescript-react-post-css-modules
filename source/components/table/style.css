@@ -1,9 +1,4 @@
-:root {
-  --red: red;
-  --green: green;
-  --blue: blue;
-  --yellow: yellow;
-}
+@import "../../styles/colors.css";
 
 .table {
   display: table;
@@ -20,17 +15,17 @@
 }
 
 .cell:nth-child(1) {
-  background: var(--red);
+  background: var(--MEDIUMTURQUOISE);
 }
 
 .cell:nth-child(2) {
-  background: var(--green);
+  background: var(--CADETBLUE);
 }
 
 .cell:nth-child(3) {
-  background: var(--blue);
+  background: var(--DODGERBLUE);
 }
 
-.cell.yellow {
-  background: var(--yellow);
+.cell.gold {
+  background: var(--GOLD);
 }
